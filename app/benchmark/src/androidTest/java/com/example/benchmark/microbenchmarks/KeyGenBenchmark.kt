@@ -1,8 +1,11 @@
-package com.example.benchmark
+package com.example.benchmark.microbenchmarks
 
 import androidx.benchmark.junit4.BenchmarkRule
 import androidx.benchmark.junit4.measureRepeated
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.example.benchmark.MLKEM
+import com.example.benchmark.XWing
+import com.example.benchmark.createLibSodium
 import com.example.benchmark.utils.checkLibSodiumSuccess
 import org.junit.Rule
 import org.junit.Test
@@ -25,9 +28,9 @@ class KeyGenBenchmark {
 
     @Test
     fun X25519KeyGen() {
-        val publicKey = ByteArray(Box.PUBLICKEYBYTES)
-        val secretKey = ByteArray(Box.SECRETKEYBYTES)
         benchmarkRule.measureRepeated {
+            val publicKey = ByteArray(Box.PUBLICKEYBYTES)
+            val secretKey = ByteArray(Box.SECRETKEYBYTES)
             libSodium.randombytes_buf(/* buffer = */ secretKey, /* size = */ secretKey.size)
             val res = libSodium.crypto_scalarmult_base(publicKey, secretKey)
             // confirm successful keygen
@@ -37,9 +40,9 @@ class KeyGenBenchmark {
 
     @Test
     fun MLKEMKeyGen() {
-        val publicKey = ByteArray(MLKEM.PUBLICKEYBYTES)
-        val secretKey = ByteArray(MLKEM.SECRETKEYBYTES)
         benchmarkRule.measureRepeated {
+            val publicKey = ByteArray(MLKEM.PUBLICKEYBYTES)
+            val secretKey = ByteArray(MLKEM.SECRETKEYBYTES)
             val res = libSodium.crypto_kem_mlkem768_keypair(publicKey, secretKey)
             // confirm successful keygen
             checkLibSodiumSuccess(res)
@@ -48,9 +51,9 @@ class KeyGenBenchmark {
 
     @Test
     fun XwingKeyGen() {
-        val publicKey = ByteArray(XWing.PUBLICKEYBYTES)
-        val secretKey = ByteArray(XWing.SECRETKEYBYTES)
         benchmarkRule.measureRepeated {
+            val publicKey = ByteArray(XWing.PUBLICKEYBYTES)
+            val secretKey = ByteArray(XWing.SECRETKEYBYTES)
             val res = libSodium.crypto_kem_keypair(publicKey, secretKey)
             // confirm successful keygen
             checkLibSodiumSuccess(res)

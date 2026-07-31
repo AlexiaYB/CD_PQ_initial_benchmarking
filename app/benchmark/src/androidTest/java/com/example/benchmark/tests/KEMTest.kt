@@ -1,9 +1,12 @@
-package com.example.benchmark
+package com.example.benchmark.tests
 
 import androidx.test.platform.app.InstrumentationRegistry
+import com.example.benchmark.MLKEM
+import com.example.benchmark.XWing
+import com.example.benchmark.createLibSodium
 import com.example.benchmark.utils.checkLibSodiumSuccess
+import com.google.common.truth.Truth
 import org.junit.Test
-import com.google.common.truth.Truth.assertThat
 
 class KEMTest {
     private val libSodium = createLibSodium()
@@ -32,7 +35,7 @@ class KEMTest {
         checkLibSodiumSuccess(res3)
 
         //confirm both shared secrets are equal
-        assertThat(sharedSecret).isEqualTo(sharedSecretDecaps)
+        Truth.assertThat(sharedSecret).isEqualTo(sharedSecretDecaps)
     }
 
     @Test
@@ -58,7 +61,7 @@ class KEMTest {
         checkLibSodiumSuccess(res3)
 
         //confirm both shared secrets are equal
-        assertThat(sharedSecret).isEqualTo(sharedSecretDecaps)
+        Truth.assertThat(sharedSecret).isEqualTo(sharedSecretDecaps)
     }
 
 

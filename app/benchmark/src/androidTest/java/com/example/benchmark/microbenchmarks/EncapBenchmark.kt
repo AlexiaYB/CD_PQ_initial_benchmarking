@@ -1,8 +1,11 @@
-package com.example.benchmark
+package com.example.benchmark.microbenchmarks
 
 import androidx.benchmark.junit4.BenchmarkRule
 import androidx.benchmark.junit4.measureRepeated
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.example.benchmark.MLKEM
+import com.example.benchmark.XWing
+import com.example.benchmark.createLibSodium
 import com.example.benchmark.utils.checkLibSodiumSuccess
 import org.junit.Rule
 import org.junit.Test

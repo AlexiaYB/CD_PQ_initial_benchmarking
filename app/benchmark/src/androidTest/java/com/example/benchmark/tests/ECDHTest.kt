@@ -1,10 +1,11 @@
-package com.example.benchmark
+package com.example.benchmark.tests
 
 import androidx.test.platform.app.InstrumentationRegistry
+import com.example.benchmark.createLibSodium
 import com.example.benchmark.utils.checkLibSodiumSuccess
-import org.junit.Test
-import com.google.common.truth.Truth.assertThat
+import com.google.common.truth.Truth
 import com.goterl.lazysodium.interfaces.Box
+import org.junit.Test
 
 class ECDHTest {
     private val libSodium = createLibSodium()
@@ -60,7 +61,7 @@ class ECDHTest {
             secretKey2)
         checkLibSodiumSuccess(res3)
 
-        assertThat(message).isEqualTo(message1)
+        Truth.assertThat(message).isEqualTo(message1)
     }
 
     @Test
@@ -81,7 +82,7 @@ class ECDHTest {
         // confirm successful keygen
         checkLibSodiumSuccess(res2)
 
-        assertThat(publicKeySM).isEqualTo(publicKeyBox)
+        Truth.assertThat(publicKeySM).isEqualTo(publicKeyBox)
     }
 
 }

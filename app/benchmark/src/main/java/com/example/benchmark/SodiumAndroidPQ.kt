@@ -3,7 +3,7 @@ package com.example.benchmark
 import com.goterl.lazysodium.SodiumAndroid
 import com.sun.jna.Native
 
-class SodiumAndroidPQ : SodiumAndroid("mysodium"){
+class SodiumAndroidPQ: SodiumAndroid("mysodium"){
     //register my .so (1.0.22 not 1.0.20) files with SodiumAndroidPQ obj -> must be done in class initialiser
     init{Native.register(SodiumAndroidPQ::class.java, "mysodium")}
 

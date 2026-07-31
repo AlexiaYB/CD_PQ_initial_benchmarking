@@ -6,23 +6,23 @@
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="ExampleBenchmark">
+      <SelectionState runConfigName="KeyGenOwnBenchmark">
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="testX25519scalarmultMatchesBoxKeys()">
+      <SelectionState runConfigName="KeyGenBenchmark (1)">
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="EncapBenchmark">
+      <SelectionState runConfigName="combined()">
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="KeyGenBenchmark">
+      <SelectionState runConfigName="combined() (1)">
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="X25519scalarmultIsSameAsBoxKeys()">
+      <SelectionState runConfigName="combined() (2)">
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
